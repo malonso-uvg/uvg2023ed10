@@ -11,9 +11,9 @@ public class TreeNode<K, V> {
 	private K key;
 	private V value;
 	
-	private TreeNode left;
-	private TreeNode right;
-	private TreeNode parent;
+	private TreeNode<K,V> left;
+	private TreeNode<K,V> right;
+	private TreeNode<K,V> parent;
 	
 	public TreeNode(K _key, V _value) {
 		setKey(_key);
@@ -54,42 +54,42 @@ public class TreeNode<K, V> {
 	/**
 	 * @return the left
 	 */
-	public TreeNode getLeft() {
+	public TreeNode<K, V> getLeft() {
 		return left;
 	}
 
 	/**
 	 * @param left the left to set
 	 */
-	public void setLeft(TreeNode left) {
+	public void setLeft(TreeNode<K, V> left) {
 		this.left = left;
 	}
 
 	/**
 	 * @return the right
 	 */
-	public TreeNode getRight() {
+	public TreeNode<K, V> getRight() {
 		return right;
 	}
 
 	/**
 	 * @param right the right to set
 	 */
-	public void setRight(TreeNode right) {
+	public void setRight(TreeNode<K, V> right) {
 		this.right = right;
 	}
 
 	/**
 	 * @return the parent
 	 */
-	public TreeNode getParent() {
+	public TreeNode<K, V> getParent() {
 		return parent;
 	}
 
 	/**
 	 * @param parent the parent to set
 	 */
-	public void setParent(TreeNode parent) {
+	public void setParent(TreeNode<K, V> parent) {
 		this.parent = parent;
 	}
 	

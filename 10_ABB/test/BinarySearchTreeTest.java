@@ -92,5 +92,6 @@ class BinarySearchTreeTest {
 		assertEquals(70, miRecorridoPreorder.getMiListado().get(3).getCarnet());
 		assertEquals(85, miRecorridoPreorder.getMiListado().get(4).getCarnet());		
 	}
+	
 
 }
