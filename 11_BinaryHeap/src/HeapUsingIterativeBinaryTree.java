@@ -203,7 +203,7 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 				if (result == 0) { //Son iguales
 					
 					result = _priorityComparator.compare(actual.get_priority(), actual.get_left().get_priority());
-					if (result < 1) {
+					if (result < 0) {
 						P tempPriority2 = actual.get_priority();
 						V tempValue2 = actual.get_value();
 						
@@ -214,11 +214,13 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 						actual.get_left().set_value(tempValue2);
 						
 						actual = actual.get_left();
+					} else {
+						break;
 					}
 					
 				} else if (result > 0){ //Hijo izquierdo mayor
 					result = _priorityComparator.compare(actual.get_priority(), actual.get_left().get_priority());
-					if (result < 1) {
+					if (result < 0) {
 						P tempPriority2 = actual.get_priority();
 						V tempValue2 = actual.get_value();
 						
@@ -228,10 +230,12 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 						actual.get_left().set_priority(tempPriority2);
 						actual.get_left().set_value(tempValue2);
 						actual = actual.get_left();
+					} else {
+						break;
 					}
 				} else {
 					result = _priorityComparator.compare(actual.get_priority(), actual.get_right().get_priority());
-					if (result < 1) {
+					if (result < 0) {
 						P tempPriority2 = actual.get_priority();
 						V tempValue2 = actual.get_value();
 						
@@ -241,6 +245,8 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 						actual.get_right().set_priority(tempPriority2);
 						actual.get_right().set_value(tempValue2);
 						actual = actual.get_right();
+					} else {
+						break;
 					}
 				}
 				
@@ -248,7 +254,7 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 				break;
 			} else if (actualHasLeftChild){ //Solo tiene izquierdo
 				int result = _priorityComparator.compare(actual.get_priority(), actual.get_left().get_priority());
-				if (result < 1) {
+				if (result < 0) {
 					P tempPriority2 = actual.get_priority();
 					V tempValue2 = actual.get_value();
 					
@@ -262,7 +268,7 @@ public class HeapUsingIterativeBinaryTree<P, V> implements IHeap<P, V> {
 				}
 			} else { //Solo tiene derecho
 				int result = _priorityComparator.compare(actual.get_priority(), actual.get_right().get_priority());
-				if (result < 1) {
+				if (result < 0) {
 					P tempPriority2 = actual.get_priority();
 					V tempValue2 = actual.get_value();
 					

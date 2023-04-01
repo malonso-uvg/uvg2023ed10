@@ -12,8 +12,10 @@ class IterativeHeapTest {
 		myHeap.Insert(15, "quince");
 		myHeap.Insert(5, "cinco");
 		myHeap.Insert(10, "diez");
+		myHeap.Insert(15, "quince");
 		
 		assertEquals("veinte", myHeap.remove());
+		assertEquals("quince", myHeap.remove());
 		assertEquals("quince", myHeap.remove());
 		assertEquals("diez", myHeap.remove());
 		assertEquals("diez", myHeap.remove());
