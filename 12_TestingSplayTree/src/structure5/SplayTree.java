@@ -138,7 +138,7 @@ public class SplayTree<E extends Comparable<E>>
 
         BinaryTree<E> possibleLocation = locate(root,val);
         splay(root = possibleLocation);
-        if (val.equals(possibleLocation.value()))
+        if (ordering.compare(val, possibleLocation.val) == 0)
             return possibleLocation.value();
         else
             return null;
