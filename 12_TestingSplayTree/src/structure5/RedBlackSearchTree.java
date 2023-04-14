@@ -126,7 +126,7 @@ public class RedBlackSearchTree<E extends Comparable<E>> extends AbstractStructu
      */
     public E remove(E value){
         // Assert.pre(value instanceof Comparable,"value must implement Comparable");
-        if (root.contains(value)){
+        if (root.contains(value) != null){
             root = root.remove(value);
             count--;
             return value;
@@ -144,7 +144,11 @@ public class RedBlackSearchTree<E extends Comparable<E>> extends AbstractStructu
      */
     public boolean contains(E value){
         //Assert.pre(value instanceof Comparable,"value must implement Comparable");
-        return root.contains(value);
+        return root.contains(value) != null;
+    }
+    
+    public E get(E value){
+    	return root.contains(value).value;
     }
     
     /**

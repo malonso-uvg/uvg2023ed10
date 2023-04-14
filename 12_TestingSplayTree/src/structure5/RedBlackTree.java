@@ -676,9 +676,9 @@ public class RedBlackTree<E extends Comparable<E>>
      * @pre c is non-null
      * @post returns true iff c is contained within the tree
      */
-    public boolean contains(E c)
+    public RedBlackTree<E> contains(E c)
     {
-        return locate(c) != null;
+        return locate(c);
     }
     
     /**
