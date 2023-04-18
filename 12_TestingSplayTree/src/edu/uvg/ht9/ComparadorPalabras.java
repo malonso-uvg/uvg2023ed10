@@ -1,7 +1,7 @@
 /**
  * 
  */
-package structure5;
+package edu.uvg.ht9;
 
 import java.util.Comparator;
 
