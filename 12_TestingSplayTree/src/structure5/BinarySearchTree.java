@@ -234,7 +234,8 @@ public class BinarySearchTree<E extends Comparable<E>>
         if (root.isEmpty()) return null;
 
         BinaryTree<E> possibleLocation = locate(root,value);
-        if (value.equals(possibleLocation.value()))
+        if (ordering.compare(value, possibleLocation.value()) == 0)
+//        if (value.equals(possibleLocation.value()))
           return possibleLocation.value();
         else
           return null;
@@ -255,7 +256,8 @@ public class BinarySearchTree<E extends Comparable<E>>
     {
         if (isEmpty()) return null;
       
-        if (value.equals(root.value())) // delete root value
+        if (ordering.compare(value, root.value()) == 0)
+        //if (value.equals(root.value())) // delete root value
         {
             BinaryTree<E> newroot = removeTop(root);
             count--;
